@@ -1,0 +1,61 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <script type = "text/javascript">
+         $(document).ready(function(){
+			
+			$('#run').click(function(){
+				var expiresOnDay[day][count];
+				var currentPacks = 5;
+				var startDay = 0;
+				var activePacksOnDay = 5;
+				var runningAmount = 0;
+				
+				
+				
+				for(var day = 0;day < 300;day++){
+					
+					runningAmount = runningAmount + currentPacks*0.6;
+					
+					var row = "<tr><td>"+day+"</td>";
+					row = "<td>"+day+"</td>";
+					row = "<td>"+day+"</td>";
+					row = "<td>"+day+"</td>";
+					row = "<td>"+day+"</td></tr>";
+					
+					$('#data').append(row);
+					
+				}
+			
+			});
+		 
+			
+		 
+		 
+		 
+		 });
+		 
+      </script> 
+  
+   </head>
+	
+   <body>
+      <h1>Hello</h1>
+	  inputpacks<input id='startPacks'></input>
+	  <button id='run'>Start</button>
+	  
+	  <table id='data' style='border-style: solid'>
+		<th>days</th>
+		<th>Active packs</th>
+		<th>packs purchased</th>
+		<th>packs expired</th>
+		<th>$ earned</th>
+		
+	  </table>
+	  
+   </body>
+	
+</html>
