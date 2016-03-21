@@ -3,6 +3,8 @@ package com.sree.maps.MAPS;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import junit.framework.Assert;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -45,6 +47,7 @@ public class ViewAdsTest {
 	}
 	
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void main(){
 	//public static void main(String[] args){
@@ -92,7 +95,7 @@ public class ViewAdsTest {
 		
 		
 		
-		
+		Assert.assertTrue(true);
 	}
 	
 	
