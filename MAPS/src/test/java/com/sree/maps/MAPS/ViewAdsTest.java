@@ -3,6 +3,8 @@ package com.sree.maps.MAPS;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,19 +23,28 @@ import com.sree.maps.utils.Utilities;
 
 public class ViewAdsTest {
 
-	@Test
-	public void main(){
-	//public static void main(String[] args){
-		
-		
+	private WebDriver driver;
+	
+	@BeforeClass
+	public void setUp(){
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SREEKANTH\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		FirefoxProfile pf = new FirefoxProfile();
 		//WebDriver driver = new FirefoxDriver(pf);
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get("http://www.myadvertisingpays.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		
+	}
+	
+	@AfterClass
+	public void tearDown(){
+		driver.close();driver.quit();
+	}
+	
+	
+	@Test
+	public void main(){
+	//public static void main(String[] args){
 		
 		EntryPage entryPage = PageFactory.initElements(driver, EntryPage.class);
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
