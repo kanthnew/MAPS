@@ -3,7 +3,9 @@ package com.sree.maps.MAPS;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -25,7 +27,8 @@ public class ViewAdsTest {
 
 	private WebDriver driver;
 	
-	@BeforeClass
+	//@BeforeClass
+	@Before
 	public void setUp(){
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SREEKANTH\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		FirefoxProfile pf = new FirefoxProfile();
@@ -36,7 +39,7 @@ public class ViewAdsTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
-	@AfterClass
+	@After
 	public void tearDown(){
 		driver.close();driver.quit();
 	}
