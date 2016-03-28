@@ -1,5 +1,9 @@
 package com.sree.maps.MAPS;
 
+import static org.junit.Assert.*;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -12,10 +16,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.sree.maps.pom.AdsTrafficPage;
@@ -31,11 +38,17 @@ public class ViewAdsTest {
 	
 	//@BeforeClass
 	@Before
-	public void setUp(){
+	public void setUp() throws MalformedURLException{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SREEKANTH\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		FirefoxProfile pf = new FirefoxProfile();
 		//WebDriver driver = new FirefoxDriver(pf);
-		driver = new ChromeDriver();
+		DesiredCapabilities desiredCapability = new DesiredCapabilities();
+		desiredCapability.setBrowserName("chrome");
+		desiredCapability.setPlatform(Platform.WIN10);
+		
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapability);
+		
+		//driver = new ChromeDriver();
 		driver.get("http://www.myadvertisingpays.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -95,7 +108,7 @@ public class ViewAdsTest {
 		
 		
 		
-		Assert.assertTrue(true);
+		//assertTrue();
 	}
 	
 	
