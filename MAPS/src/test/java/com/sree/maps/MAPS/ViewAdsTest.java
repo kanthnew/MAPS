@@ -46,9 +46,9 @@ public class ViewAdsTest {
 		desiredCapability.setBrowserName("chrome");
 		desiredCapability.setPlatform(Platform.WIN10);
 		
-		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapability);
+		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapability);
 		
-		//driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get("http://www.myadvertisingpays.com");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
